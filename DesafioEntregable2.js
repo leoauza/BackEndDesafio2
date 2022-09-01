@@ -67,6 +67,11 @@ class Contenedor {
         const productoEliminado = contenido.splice(eliminarProducto, 1);
         console.log(productoEliminado);
     }
+    async deleteAll() {
+        const contenido = await this.getAll();
+        const vaciarArray = contenido.splice(0, contenido.length);
+        console.log(vaciarArray);
+    }
     }
 
 const contenedor = new Contenedor();
