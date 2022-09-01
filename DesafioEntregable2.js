@@ -62,12 +62,12 @@ class Contenedor {
         console.log(productoBuscado);
     }
     async deleteById(id) {
-        try {
-            const contenido = await this.getAll();
-            const eliminarProducto = contenido.find((producto) => producto.id == id);
-            contenido.splice(eliminarProducto, 1)
+        const contenido = await this.getAll();
+        const eliminarProducto = contenido.find((producto) => producto.id == id);
+        const productoEliminado = contenido.splice(eliminarProducto, 1);
+        console.log(productoEliminado);
     }
-}
+    }
 
 const contenedor = new Contenedor();
 //contenedor.save(productos);
